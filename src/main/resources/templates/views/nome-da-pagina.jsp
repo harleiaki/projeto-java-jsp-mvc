@@ -19,6 +19,6 @@
     </script>
 </head>
 <body>
-Hello, esta é uma pagina jsp
+Essa é uma nova pagina com @GetController
 </body>
 </html>

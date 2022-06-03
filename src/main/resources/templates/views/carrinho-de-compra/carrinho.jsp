@@ -19,6 +19,6 @@
     </script>
 </head>
 <body>
-Hello, esta é uma pagina jsp
+Essa é a pagina do carrinho de compras
 </body>
 </html>

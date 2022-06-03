@@ -19,6 +19,6 @@
     </script>
 </head>
 <body>
-Hello, esta é uma pagina jsp
+essa é a pagina de cadastro
 </body>
 </html>
