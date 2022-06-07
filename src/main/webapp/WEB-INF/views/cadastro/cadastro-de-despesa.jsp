@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<%@page pageEncoding="UTF-8" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <head>
     <title>Cadastro de Despesa</title>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.css" />
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top"></nav>
@@ -21,7 +23,7 @@
     </div>
 
 </form>
-
+${pageContext.request.contextPath}
 
 </body>
 </html>

@@ -12,6 +12,4 @@ public class CadastroDespesa {
   public String getCadastroDespesa(){
     return "/cadastro/cadastro-de-despesa";
   }
-
-
 }
