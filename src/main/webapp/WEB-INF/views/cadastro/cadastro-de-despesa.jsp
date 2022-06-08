@@ -51,6 +51,22 @@
         </div>
     </div>
 
+    <div class="form-group">
+        <label for="observacoes" class="col-sm-2 control-label">Observações</label>
+        <div class="col-sm-2">
+            <input type="text" class="form-control" id="observacoes">
+        </div>
+    </div>
+
+    <div></div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10" >
+            <input type="submit" class="btn btn-danger">
+        </div>
+    </div>
+    <script src="/js/bootstrap.js"></script>
+
 </form>
 </body>
 </html>
