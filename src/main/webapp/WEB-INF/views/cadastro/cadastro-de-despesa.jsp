@@ -25,14 +25,14 @@
         <div class="col-sm-2">
             <select class="form-control" name="categoria">
                 <option>ALIMENTACAO</option>
-                <option>Transporte</option>
-                <option>Vestuario</option>
-                <option>Cuidados Pessoais</option>
-                <option>Moradia</option>
-                <option>Lazer</option>
-                <option>Educação</option>
-                <option>Compras</option>
-                <option>Diversão</option>
+                <option>TRANSPORTE</option>
+                <option>VESTUARIO</option>
+                <option>CUIDADOS_PESSOAIS</option>
+                <option>MORADIA</option>
+                <option>LAZER</option>
+                <option>EDUCACAO</option>
+                <option>COMPRAS</option>
+                <option>DIVERSAO</option>
             </select>
         </div>
     </div>
@@ -47,7 +47,7 @@
     <div class="form-group">
         <label for="valor" class="col-sm-2 control-label">Valor</label>
         <div class="col-sm-2">
-            <input type="number" class="form-control" id="valor" name="valor">
+            <input type="text" class="form-control" id="valor" name="valor">
         </div>
     </div>
 
