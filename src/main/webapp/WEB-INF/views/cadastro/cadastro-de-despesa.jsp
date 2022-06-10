@@ -1,12 +1,21 @@
+<%@page language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Cadastro de Despesa</title>
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top"></nav>
+
+<form class="form-horizontal" action="/cadastrodespesa" method="post">
+    <c:if test="${!empty mensagem}">
+        <div class="alert success">
+            <span>${mensagem}</span>
+        </div>
+    </c:if>
+</form>
 
 <form class="form-horizontal" method="post" action="/cadastrodespesa">
     <div class="panel panel-default">
@@ -61,7 +70,7 @@
     <div></div>
 
     <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10" >
+        <div class="col-sm-offset-2 col-sm-10">
             <input type="submit" class="btn btn-danger">
         </div>
     </div>
