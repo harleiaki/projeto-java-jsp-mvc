@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DespesaService {
 
@@ -14,6 +16,10 @@ public class DespesaService {
 
   public Despesa salvar(Despesa despesa) {
     return despesaRepository.save(despesa);
+  }
+
+  public List<Despesa> getListAll(){
+    return despesaRepository.findAll();
   }
 
 }

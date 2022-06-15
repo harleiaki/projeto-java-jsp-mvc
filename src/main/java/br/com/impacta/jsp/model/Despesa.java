@@ -13,6 +13,11 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -33,8 +38,10 @@ public class Despesa {
   @NotBlank
   private String descricao;
 
-  @Enumerated(EnumType.STRING)
-  private Categoria categoria;
+
+  @ManyToOne
+  @JoinColumn(name = "categoria_codigo")
+  private Categorias categoria;
 
   @DateTimeFormat(pattern = "dd/MM/yyyy")
   @Temporal(TemporalType.DATE)

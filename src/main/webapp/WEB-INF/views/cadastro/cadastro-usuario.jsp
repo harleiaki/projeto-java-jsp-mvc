@@ -1,4 +1,4 @@
-
+<%@page pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -16,6 +16,6 @@
     </script>
 </head>
 <body>
-essa é a pagina de cadastro
+essa é a pagina de cadastro que foi add na nova pag
 </body>
 </html>

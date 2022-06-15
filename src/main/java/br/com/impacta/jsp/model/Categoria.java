@@ -10,7 +10,7 @@ public enum Categoria {
   ALIMENTACAO("Alimentação"),
   TRANSPORTE("Transporte"),
   VESTUARIO("Vestuario"),
-  CUIDADOS_PESSOAIS("Cuidados_Pessoais"),
+  CUIDADOS_PESSOAIS("Cuidados Pessoais"),
   MORADIA("Moradia"),
   LAZER("Lazer"),
   EDUCACAO("Educacão"),
