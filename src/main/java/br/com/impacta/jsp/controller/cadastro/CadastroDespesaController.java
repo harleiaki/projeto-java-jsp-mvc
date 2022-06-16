@@ -1,6 +1,6 @@
 package br.com.impacta.jsp.controller.cadastro;
 
-import br.com.impacta.jsp.model.Categoria;
+import br.com.impacta.jsp.model.Categorias;
 import br.com.impacta.jsp.model.Despesa;
 import br.com.impacta.jsp.service.CategoriasService;
 import br.com.impacta.jsp.service.DespesaService;
@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Slf4j
@@ -47,7 +45,7 @@ public class CadastroDespesaController {
   }
 
   @ModelAttribute("todasCategoria")
-  public List<String> todasCategoria(){
-    return categoriasService.getList();
+  public List<Categorias> todasCategoria(){
+    return categoriasService.getListAll();
   }
 }

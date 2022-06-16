@@ -1,5 +1,6 @@
 package br.com.impacta.jsp.service;
 
+import br.com.impacta.jsp.model.Categorias;
 import br.com.impacta.jsp.repository.CategoriasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ public class CategoriasService {
   @Autowired
   private CategoriasRepository categoriasRepository;
 
-  public List<String> getList(){
+  public List<String> getListName(){
     //codigo , nome
     List<String> novaList = new ArrayList<>();
       categoriasRepository
@@ -23,5 +24,9 @@ public class CategoriasService {
           novaList.add(categorias.getName());
         });
     return novaList;
+  }
+
+  public List<Categorias> getListAll(){
+    return categoriasRepository.findAll();
   }
 }

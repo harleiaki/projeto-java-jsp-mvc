@@ -34,7 +34,7 @@
         <div class="col-sm-2">
             <select class="form-control" name="categoria">
                 <c:forEach items="${todasCategoria}" var="categoria">
-                    <option value="${categoria}">${categoria}</option>
+                    <option value="${categoria.codigo}">${categoria.name}</option>
                 </c:forEach>
             </select>
         </div>
