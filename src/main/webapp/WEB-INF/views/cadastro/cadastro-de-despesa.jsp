@@ -8,15 +8,13 @@
 <body>
 <nav class="navbar navbar-inverse navbar-static-top"></nav>
 
-<form class="form-horizontal" action="/cadastrodespesa" method="post">
+
+<form class="form-horizontal" method="post" action="/cadastrodespesa">
     <c:if test="${!empty mensagem}">
         <div class="alert alert-success">
             <span>${mensagem}</span>
         </div>
     </c:if>
-</form>
-
-<form class="form-horizontal" method="post" action="/cadastrodespesa">
     <div class="panel panel-default">
         <div class="panel-heading">
             <h1 class="panel-title">Nova Despesa</h1>
@@ -33,6 +31,8 @@
         <label for="categoria" class="col-sm-2 control-label">Categoria</label>
         <div class="col-sm-2">
             <select class="form-control" name="categoria">
+                <option hidden>Selecione...</option>
+                <%-- opção não selecionavel--%>
                 <c:forEach items="${todasCategoria}" var="categoria">
                     <option value="${categoria.codigo}">${categoria.name}</option>
                 </c:forEach>
@@ -60,7 +60,6 @@
             <input type="text" class="form-control" id="observacoes" name="observacoes">
         </div>
     </div>
-
     <div></div>
 
     <div class="form-group">
