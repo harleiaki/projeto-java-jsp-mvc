@@ -50,7 +50,7 @@ public class Despesa {
   @NumberFormat(pattern = "#,##0.00")
   private BigDecimal valor;
 
-  @Column(name = "outroNome", nullable = false, length = 4000)
+  @Column(name = "obs", nullable = false, length = 4000)
   private String observacoes;
 
 }

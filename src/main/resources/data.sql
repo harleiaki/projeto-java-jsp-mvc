@@ -8,5 +8,4 @@ INSERT INTO CATEGORIAS  VALUES(7, 'Educacão');
 INSERT INTO CATEGORIAS  VALUES(8, 'Compras');
 INSERT INTO CATEGORIAS  VALUES(9, 'Diversão');
 
-
-INSERT INTO DESPESA  VALUES(1, '2022-06-14' , 'Internet',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(1, '2022-06-14' , 'Internet',  'teste', 1234.00, 1);
