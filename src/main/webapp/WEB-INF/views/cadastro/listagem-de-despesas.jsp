@@ -40,7 +40,8 @@
                     <td class="text-right"><f:formatNumber value="${despesas.valor}" type="currency"/></td>
                     <td class="text-center">${despesas.observacoes}</td>
                     <td class="text-center">
-                        <a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmaRemocaoModal">
+                        <a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmaRemocaoModal"
+                        data-whatever="${despesas.codigo}">
                             <span class="glyphicon glyphicon-remove"></span>
                         </a>
                     </td>
@@ -57,8 +58,8 @@
 
 <div class="modal fade" id="confirmaRemocaoModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
-        <form >
-
+           <form action="/despesas" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
 
             <div class="modal-content">
                 <div class="modal-header">

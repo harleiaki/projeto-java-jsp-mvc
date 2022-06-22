@@ -22,4 +22,7 @@ public class DespesaService {
     return despesaRepository.findAll();
   }
 
+    public void excluir(Long codigo) {
+      despesaRepository.deleteById(codigo);
+    }
 }
