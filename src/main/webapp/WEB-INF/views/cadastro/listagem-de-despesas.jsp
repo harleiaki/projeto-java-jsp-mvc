@@ -6,6 +6,8 @@
 <head>
     <title>Listagem de Despesas</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css"/>
+    <script src="/js/jquery-3.1.1.js"></script>
+    <script src="/js/bootstrap.js"></script>
 </head>
 <body>
 
@@ -26,31 +28,54 @@
             <th class="text-center col-md-4">Data</th>
             <th class="text-center col-md-5">Valor</th>
             <th class="text-center col-md-6">Observações</th>
-            <th class="col-md-1"></th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${despesas}" var="despesas">
-            <tr>
-                <td class="text-center">${despesas.codigo}</td>
-                <td class="text-left">${despesas.descricao}</td>
-                <td class="text-center">${despesas.categoria.name}</td>
-                <td class="text-center"><f:formatDate value="${despesas.data}" type="date"
-                                                      pattern="dd/MM/yyyy"/></td>
-                <td class="text-right"><f:formatNumber value="${despesas.valor}"
-                                                       type="currency"/></td>
-                <td class="text-center">${despesas.observacoes}</td>
-                <td></td>
-            </tr>
-        </c:forEach>
-        <c:if test="${despesa.isEmpty()}">
-            <tr>
-                <td class="text-center" colspan="7"><i>NUNHUMA DESPESA ENCONTRADA</i></td>
-            </tr>
-        </c:if>
+            <c:forEach items="${despesas}" var="despesas">
+                <tr>
+                    <td class="text-center">${despesas.codigo}</td>
+                    <td class="text-left">${despesas.descricao}</td>
+                    <td class="text-center">${despesas.categoria.name}</td>
+                    <td class="text-center"><f:formatDate value="${despesas.data}" type="date" pattern="dd/MM/yyyy"/></td>
+                    <td class="text-right"><f:formatNumber value="${despesas.valor}" type="currency"/></td>
+                    <td class="text-center">${despesas.observacoes}</td>
+                    <td class="text-center">
+                        <a class="btn btn-link btn-xs" data-toggle="modal" data-target="#confirmaRemocaoModal">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </td>
+                </tr>
+            </c:forEach>
+            <c:if test="${despesa.isEmpty()}">
+                <tr>
+                    <td class="text-center" colspan="7"><i>NUNHUMA DESPESA ENCONTRADA</i></td>
+                </tr>
+            </c:if>
         </tbody>
     </table>
+</div>
 
+<div class="modal fade" id="confirmaRemocaoModal" tabindex="-1" data-keyboard="false" data-backdrop="static">
+    <div class="modal-dialog">
+        <form >
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirmação</h4>
+                </div>
+
+                <div class="modal-body">
+                   <span>Deseja realmente remover esta despesa?</span>
+                </div>
+
+                <div class="modal-footer">
+                   <button type="button" class="btn btn-link" data-dismiss="modal">Cancelar</button>
+                   <button type="submit" class="btn btn-primary" data-dismiss="modal">Confirmar</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 </body>

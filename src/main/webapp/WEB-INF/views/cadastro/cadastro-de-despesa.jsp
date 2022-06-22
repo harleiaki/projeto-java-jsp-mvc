@@ -1,5 +1,6 @@
 <%@page language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="f" %>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Cadastro de Despesa</title>
@@ -34,7 +35,11 @@
                 <option hidden>Selecione...</option>
                 <%-- opção não selecionavel--%>
                 <c:forEach items="${todasCategoria}" var="categoria">
-                    <option value="${categoria.codigo}">${categoria.name}</option>
+
+                    <c:set var = "qualquerNome" value = "${f:toUpperCase(categoria.name)}" />
+
+
+                    <option value="${categoria.codigo}">${qualquerNome}</option>
                 </c:forEach>
             </select>
         </div>

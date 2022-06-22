@@ -40,7 +40,6 @@ public class Despesa {
 
 
   @ManyToOne
-  @JoinColumn(name = "categoria_codigo")
   private Categorias categoria;
 
   @DateTimeFormat(pattern = "dd/MM/yyyy")
