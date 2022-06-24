@@ -7,6 +7,7 @@ import br.com.impacta.jsp.service.DespesaService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -25,19 +26,24 @@ public class CadastroDespesaController {
 
   @GetMapping
   public ModelAndView getCadastroDespesa(){
-    return new ModelAndView("/cadastro/cadastro-de-despesa");
+    ModelAndView modelAttribute = new ModelAndView("/cadastro/cadastro-de-despesa");
+    return modelAttribute.addObject(new Despesa());
   }
 
   @PostMapping
-  public ModelAndView salvar(@Valid Despesa despesa){
+  public ModelAndView salvar(@Valid @ModelAttribute("despesa") Despesa despesa, Errors errors){
+    ModelAndView modelAndView = new ModelAndView("/cadastro/cadastro-de-despesa");
+
+    if(errors.hasErrors()){
+      return modelAndView;
+    }
 
     log.info("Objeto de despesa antes de persistir{}", despesa );
     Despesa despesaEntity = despesaService.salvar(despesa);
     log.info("Objeto de despesa após persistir{}", despesaEntity );
 
-    ModelAndView modelAndView = new ModelAndView("/cadastro/cadastro-de-despesa");
-    modelAndView.addObject("mensagem", "Despesa salva");
 
+    modelAndView.addObject("mensagem", "Despesa salva");
     return modelAndView;
   }
 
@@ -47,8 +53,8 @@ public class CadastroDespesaController {
   }
 
   @DeleteMapping("{codigo}")
-  public String excluir (@PathVariable Long codigo){
+  public String excluir(@PathVariable Long codigo ) {
     despesaService.excluir(codigo);
-    return "redirect:/despesas";
+    return "redirect:/listagem";
   }
 }

@@ -1,0 +1,14 @@
+$('#confirmaRemocaoModal').on('show.bs.modal', function(event) {
+	var button = $(event.relatedTarget);
+	
+	var codigo = button.data('whatever');
+	
+	var modal = $(this);
+	var form = modal.find('form');
+	var action = form.attr('action');
+
+	action = '/cadastrodespesa/';
+	form.attr('action', action + codigo);
+	
+	modal.find('.modal-body span').html('Tem certeza que deseja excluir a despesa <strong>' + codigo + '</strong>?');
+});

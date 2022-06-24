@@ -6,22 +6,10 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
+import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -31,25 +19,29 @@ import java.util.Date;
 @NoArgsConstructor
 public class Despesa {
 
-  @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private Long codigo;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long codigo;
 
-  @NotBlank
-  private String descricao;
+    @NotBlank(message = "Insira uma descrição")
+    private String descricao;
 
 
-  @ManyToOne
-  private Categorias categoria;
+    @ManyToOne
+    @NotNull(message = "Insira uma categoria")
+    private Categorias categoria;
 
-  @DateTimeFormat(pattern = "dd/MM/yyyy")
-  @Temporal(TemporalType.DATE)
-  private Date data;
+    @NotNull(message = "Insira uma data valida")
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    @Temporal(TemporalType.DATE)
+    private Date data;
 
-  @NumberFormat(pattern = "#,##0.00")
-  private BigDecimal valor;
+    @NotNull(message = "Insira um valor para despesa")
+    @NumberFormat(pattern = "#,##0.00")
+    @DecimalMin(value = "1.00", message = "despesa deve ser maior que R$1.00")
+    private BigDecimal valor;
 
-  @Column(name = "obs", nullable = false, length = 4000)
-  private String observacoes;
+    @Column(name = "obs", nullable = false, length = 4000)
+    private String observacoes;
 
 }
