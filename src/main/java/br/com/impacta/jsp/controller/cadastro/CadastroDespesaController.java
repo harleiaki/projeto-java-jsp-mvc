@@ -26,13 +26,16 @@ public class CadastroDespesaController {
 
   @GetMapping
   public ModelAndView getCadastroDespesa(){
-    ModelAndView modelAttribute = new ModelAndView("/cadastro/cadastro-de-despesa");
-    return modelAttribute.addObject(new Despesa());
+    ModelAndView modelAndView =
+            new ModelAndView("/cadastro/cadastro-de-despesa");
+    return modelAndView.addObject(new Despesa());
   }
 
   @PostMapping
-  public ModelAndView salvar(@Valid @ModelAttribute("despesa") Despesa despesa, Errors errors){
-    ModelAndView modelAndView = new ModelAndView("/cadastro/cadastro-de-despesa");
+  public ModelAndView salvar(@Valid @ModelAttribute("despesa") Despesa despesa,
+                             Errors errors){
+    ModelAndView modelAndView =
+            new ModelAndView("/cadastro/cadastro-de-despesa");
 
     if(errors.hasErrors()){
       return modelAndView;
