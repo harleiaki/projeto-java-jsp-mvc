@@ -56,7 +56,7 @@
     <div class="form-group">
         <label for="valor" class="col-sm-2 control-label">Valor</label>
         <div class="col-sm-2">
-            <spring:input type="text" class="form-control" id="valor" name="valor" path="valor"/>
+            <spring:input type="text" class="form-control javascript-moeda" id="valor" name="valor" path="valor"/>
             <spring:errors path="valor" cssClass="error"/>
         </div>
     </div>
@@ -75,6 +75,8 @@
         </div>
     </div>
     <script src="/js/bootstrap.js"></script>
+    <script src="/js/jquery-maskmoney.js"></script>
+    <script src="/js/despesa.js"></script>
 
 </spring:form>
 </body>

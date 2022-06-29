@@ -18,18 +18,24 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf().disable()
+        // somente para liberar o acesso ao H2-CONSOLE
+        http
+                .csrf().disable()
+                .headers().frameOptions().sameOrigin()
+                .and()
                 .authorizeRequests()
-                .antMatchers("/images/**", "/css/**", "/js/**", "/h2-console/**")
+                .antMatchers("/h2-console/**")
+                .permitAll();
+        //  configuração de segurança da aplicação
+        http
+                .authorizeRequests()
+                .antMatchers("/images/**", "/css/**", "/js/**")
                 .permitAll()
                 .antMatchers("/usuario/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin()
-                .and()
-                .headers().frameOptions().sameOrigin();
+                .formLogin();
     }
-
 
     @Autowired
     public void Login(AuthenticationManagerBuilder authenticationManagerBuilder, UsuarioService usuarioService) throws Exception {
