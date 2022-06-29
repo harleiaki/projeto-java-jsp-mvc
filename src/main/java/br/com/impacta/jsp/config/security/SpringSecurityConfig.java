@@ -1,6 +1,7 @@
 package br.com.impacta.jsp.config.security;
 
 import br.com.impacta.jsp.repository.UsuarioRepository;
+import br.com.impacta.jsp.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +20,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/images/**", "/css/**", "/js/**", "/h2-console/**").permitAll()
+                .antMatchers("/images/**", "/css/**", "/js/**", "/h2-console/**")
+                .permitAll()
                 .antMatchers("/usuario/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -28,9 +30,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .headers().frameOptions().sameOrigin();
     }
 
+
     @Autowired
-    public void authenticationManager(AuthenticationManagerBuilder builder, UsuarioRepository usuarioRepository) throws Exception {
-        builder.userDetailsService(login -> new UsuarioCustomDTO(usuarioRepository.findByEmail(login)))
+    public void Login(AuthenticationManagerBuilder authenticationManagerBuilder, UsuarioService usuarioService) throws Exception {
+        authenticationManagerBuilder.userDetailsService(
+                        email -> new UsuarioCustomDTO(usuarioService.getEmail(email)))
                 .passwordEncoder(passwordEncoder());
     }
 

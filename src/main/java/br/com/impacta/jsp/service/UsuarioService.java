@@ -15,7 +15,7 @@ public class UsuarioService {
         return usuarioRepository.save(usuarios);
     }
 
-    public Usuarios getLogin(String email) {
+    public Usuarios getEmail(String email) {
         return usuarioRepository.findByEmail(email);
     }
 }

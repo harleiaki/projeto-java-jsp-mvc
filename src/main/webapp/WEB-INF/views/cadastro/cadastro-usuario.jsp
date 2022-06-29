@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <title>Cadastro de Usuario</title>
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top"></nav>
