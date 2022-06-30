@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -55,9 +56,10 @@ public class CadastroDespesaController {
     return categoriasService.getListAll();
   }
 
-  @DeleteMapping("{codigo}")
-  public String excluir(@PathVariable Long codigo ) {
+
+  @RequestMapping(value = "{codigo}")
+  public RedirectView excluir(@PathVariable Long codigo ) {
     despesaService.excluir(codigo);
-    return "redirect:/listagem";
+    return new RedirectView("/listagem");
   }
 }

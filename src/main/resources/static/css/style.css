@@ -1,17 +1,22 @@
-.navbar-brand{
-    padding-top: 12px;
+.navbar-brand {
+	padding-top: 12px;
 }
 
-.panel-default{
-    margin-left: 10px;
-    margin-right: 10px;
+.panel-default {
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
-.impacta-link-panel{
-    float: left;
-    padding-top: 2px;
+.impacta-link-panel {
+	float: right;
+	padding: 0px;
 }
 
-span.error{
-       color: red;
+.impacta-titulo-panel {
+	float: left;
+	padding-top: 2px;
+}
+
+span.error {
+	color: red; 
 }
