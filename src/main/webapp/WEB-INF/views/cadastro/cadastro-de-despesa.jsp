@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="f" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="spring"%>
 <head>
 <meta charset="UTF-8" />
@@ -43,11 +44,15 @@
 				<div class="form-group">
 					<label for="categoria" class="col-sm-2 control-label">Categoria</label>
 					<div class="col-sm-2">
-						<select class="form-control" name="categoria">
-							<c:forEach items="${todasCategorias}" var="categoria">
-								<option value="${categoria.codigo}">${categoria.name}</option>
-							</c:forEach>
-						</select>
+						 <spring:select class="form-control" name="categoria" path="categoria">
+                                        <option hidden>Selecione...</option>
+                                        <%-- opção não selecionavel--%>
+                                        <c:forEach items="${todasCategoria}" var="categoria">
+                                            <c:set var = "qualquerNome" value = "${f:toUpperCase(categoria.name)}" />
+                                            <option value="${categoria.codigo}">${qualquerNome}</option>
+                                        </c:forEach>
+                                    </spring:select>
+                                    <spring:errors path="descricao" cssClass="error" />
 					</div>
 				</div>
 				<div class="form-group">

@@ -23,7 +23,7 @@
 
 		<div class="panel-body">
 
-			<form method="GET" class="form-horizontal" action="/listagem">
+			<form method="GET" class="form-horizontal" action="/listagem/filtrar">
 				<div class="form-group">
 					<div class="col-sm-4">
 						<div class="input-group">

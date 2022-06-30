@@ -5,6 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface DespesaRepository extends JpaRepository<Despesa, Long> {
 
@@ -13,4 +15,6 @@ public interface DespesaRepository extends JpaRepository<Despesa, Long> {
   String findByCategoriaAndAndDataAfter(String categoria, String data);
  @Query("SELECT 1 FROM Despesa ")
   String findByAlgumaCoisa();
+
+    List<Despesa> findByDescricaoContaining(String descricao);
 }

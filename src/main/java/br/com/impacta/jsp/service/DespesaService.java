@@ -3,7 +3,6 @@ package br.com.impacta.jsp.service;
 import br.com.impacta.jsp.model.Despesa;
 import br.com.impacta.jsp.repository.DespesaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,5 +23,9 @@ public class DespesaService {
 
     public void excluir(Long codigo) {
       despesaRepository.deleteById(codigo);
+    }
+
+    public List<Despesa> findByDescricaoContaining(String descricao) {
+        return despesaRepository.findByDescricaoContaining(descricao);
     }
 }
