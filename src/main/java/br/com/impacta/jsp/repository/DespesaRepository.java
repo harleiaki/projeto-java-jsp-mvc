@@ -16,5 +16,5 @@ public interface DespesaRepository extends JpaRepository<Despesa, Long> {
  @Query("SELECT 1 FROM Despesa ")
   String findByAlgumaCoisa();
 
-    List<Despesa> findByDescricaoContaining(String descricao);
+    List<Despesa> findByDescricaoContainingIgnoreCase(String descricao);
 }

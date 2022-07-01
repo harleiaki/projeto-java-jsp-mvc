@@ -25,7 +25,7 @@ public class DespesaService {
       despesaRepository.deleteById(codigo);
     }
 
-    public List<Despesa> findByDescricaoContaining(String descricao) {
-        return despesaRepository.findByDescricaoContaining(descricao);
+    public List<Despesa> findByDescricaoContainingIgnoreCase(String descricao) {
+        return despesaRepository.findByDescricaoContainingIgnoreCase(descricao);
     }
 }

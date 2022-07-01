@@ -28,7 +28,7 @@ public class ListagemDespesasController {
 
   @GetMapping("/filtrar")
   public ModelAndView despesas(@RequestParam(defaultValue = "%") String descricao) {
-    List<Despesa> listaDespesas = despesaService.findByDescricaoContaining(descricao);
+    List<Despesa> listaDespesas = despesaService.findByDescricaoContainingIgnoreCase(descricao);
     ModelAndView mv = new ModelAndView("/cadastro/listagem-de-despesas");
     mv.addObject("despesas", listaDespesas);
     return mv;

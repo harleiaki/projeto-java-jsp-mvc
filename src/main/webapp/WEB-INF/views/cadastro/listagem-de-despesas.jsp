@@ -66,11 +66,13 @@
 							<td class="text-right"><fmt:formatNumber
 									value="${despesa.valor}" type="currency" /></td>
 							<td class="text-left">${despesa.observacoes}</td>
-							<td class="text-center"><a class="btn btn-link btn-xs"
+							<td class="text-center">
+							<a class="btn btn-link btn-xs"
 								data-toggle="modal" data-target="#confirmaRemocaoModal"
-								data-whatever="${despesa.categoria.codigo}"> <span
-									class="glyphicon glyphicon-remove"></span>
-							</a></td>
+								data-whatever="${despesa.codigo}">
+								<span class="glyphicon glyphicon-remove"></span>
+							</a>
+							</td>
 						</tr>
 					</c:forEach>
 					<c:if test="${despesas.isEmpty()}">

@@ -9,3 +9,14 @@ INSERT INTO CATEGORIAS  VALUES(8, 'Compras');
 INSERT INTO CATEGORIAS  VALUES(9, 'Diversão');
 
 INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(1, '2022-06-14' , 'Internet',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(2, '2022-06-14' , 'Sabão',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(3, '2022-06-14' , 'PC',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(4, '2022-06-14' , 'caneta',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(5, '2022-06-14' , 'lapis',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(6, '2022-06-14' , 'celular',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(7, '2022-06-14' , 'mouse',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(8, '2022-06-14' , 'internet',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(9, '2022-06-14' , 'internet',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(10, '2022-06-14' , 'internet',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(11, '2022-06-14' , 'internet',  'teste', 1234.00, 1);
+INSERT INTO DESPESA (codigo,data, descricao, obs,valor, categoria_codigo ) VALUES(12, '2022-06-14' , 'internet',  'teste', 1234.00, 1);

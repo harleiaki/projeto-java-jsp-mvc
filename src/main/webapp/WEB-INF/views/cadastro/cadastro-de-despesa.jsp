@@ -9,6 +9,7 @@
 <title>Cadastro de Despesa</title>
 <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/bootstrap-datepicker.standalone.min.css" />
 </head>
 
 <body>
@@ -45,23 +46,25 @@
 					<label for="categoria" class="col-sm-2 control-label">Categoria</label>
 					<div class="col-sm-2">
 						 <spring:select class="form-control" name="categoria" path="categoria">
-                                        <option hidden>Selecione...</option>
-                                        <%-- opção não selecionavel--%>
-                                        <c:forEach items="${todasCategoria}" var="categoria">
-                                            <c:set var = "qualquerNome" value = "${f:toUpperCase(categoria.name)}" />
-                                            <option value="${categoria.codigo}">${qualquerNome}</option>
-                                        </c:forEach>
-                                    </spring:select>
-                                    <spring:errors path="descricao" cssClass="error" />
+                                <option hidden>Selecione...</option>
+                                <%-- opção não selecionavel--%>
+                                <c:forEach items="${todasCategoria}" var="categoria">
+                                     <c:set var = "qualquerNome" value = "${f:toUpperCase(categoria.name)}" />
+                                     <option value="${categoria.codigo}">${qualquerNome}</option>
+                                </c:forEach>
+                         </spring:select>
+                         <spring:errors path="categoria" cssClass="error" />
 					</div>
 				</div>
 				<div class="form-group">
 					<label for="data" class="col-sm-2 control-label">Data</label>
 					<div class="col-sm-2">
-						<spring:input type="text" class="form-control" id="data"
-							name="data" path="data" data-provide="datepicker"
-							data-date-format="dd/mm/yyyy" data-date-language="pt-BR"
-							data-date-autoclose="true" data-date-todayHighlight="true"
+						<spring:input type="text" class="form-control" id="data" name="data" path="data"
+						    data-provide="datepicker"
+							data-date-format="dd/mm/yyyy"
+							data-date-language="pt-BR"
+							data-date-autoclose="true"
+							data-date-todayHighlight="true"
 							data-date-orientation="bottom" />
 						<spring:errors path="data" cssClass="error" />
 					</div>
@@ -96,6 +99,8 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/jquery.maskMoney.min.js"></script>
 	<script src="/js/despesa.js"></script>
+	<script src="/js/bootstrap-datepicker.pt-BR.min.js"></script>
+	<script src="/js/bootstrap-datepicker.min.js"></script>
 </body>
 </html>
 

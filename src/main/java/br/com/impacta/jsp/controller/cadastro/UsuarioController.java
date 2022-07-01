@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 @RequestMapping("/usuario")
@@ -25,14 +26,13 @@ public class UsuarioController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    public ModelAndView salvarUsuario(Usuarios user) {
-        ModelAndView modelAndView = new ModelAndView("redirect:/listagem");
-        String senhaCriptografada = new BCryptPasswordEncoder().encode(user.getSenha());
-        user.setSenha(senhaCriptografada);
-        usuarioService.salvar(user);
-        modelAndView.addObject("message",
-                "Usuario Salvo com sucesso");
+    public RedirectView salvarUsuario(Usuarios usuarios) {
 
-        return modelAndView;
+        String senhaUsuario = usuarios.getSenha();
+        String senhaCriptografada = new BCryptPasswordEncoder().encode(senhaUsuario);
+        usuarios.setSenha(senhaCriptografada);
+        usuarioService.salvar(usuarios);
+
+        return new RedirectView("/listagem");
     }
 }
