@@ -20,12 +20,11 @@ import java.util.Date;
 public class Despesa {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
 
     @NotBlank(message = "Insira uma descrição")
     private String descricao;
-
 
     @ManyToOne
     @NotNull(message = "Insira uma categoria")

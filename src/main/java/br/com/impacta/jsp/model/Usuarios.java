@@ -18,7 +18,7 @@ import javax.validation.constraints.NotBlank;
 public class Usuarios {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long primarykey;
 
     @NotBlank(message = "Insira um nome")
