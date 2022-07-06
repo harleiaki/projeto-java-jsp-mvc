@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8" />
 <title>Listagem de Despesas</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
 </head>
 <body>
 
@@ -17,13 +17,13 @@
 		<div class="panel-heading">
 			<div class="clearfix">
 				<h1 class="panel-title impacta-titulo-panel">Listagem de Despesas</h1>
-				<a class="btn btn-link impacta-link-panel" href="/cadastrodespesa">Nova Despesa</a>
+				<a class="btn btn-link impacta-link-panel" href="${pageContext.request.contextPath}/cadastrodespesa">Nova Despesa</a>
 			</div>
 		</div>
 
 		<div class="panel-body">
 
-			<form method="GET" class="form-horizontal" action="/listagem/filtrar">
+			<form method="GET" class="form-horizontal" action="${pageContext.request.contextPath}/listagem/filtrar">
 				<div class="form-group">
 					<div class="col-sm-4">
 						<div class="input-group">
@@ -88,7 +88,7 @@
 		<div class="modal fade" id="confirmaRemocaoModal" tabindex="-1"
 			data-keyboard="false" data-backdrop="static">
 			<div class="modal-dialog">
-				<form action="/despesacadastro" method="POST">
+				<form action="${pageContext.request.contextPath}/despesacadastro" method="POST">
 					<input type="hidden" name="_method" value="DELETE" />
 
 					<div class="modal-content">
@@ -110,9 +110,9 @@
 		</div>
 
 	</div>
-	<script src="/js/jquery-3.1.1.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/despesa.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/despesa.js"></script>
 
 </body>
 </html>

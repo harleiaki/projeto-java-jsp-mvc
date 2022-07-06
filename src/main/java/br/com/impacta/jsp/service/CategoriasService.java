@@ -29,4 +29,9 @@ public class CategoriasService {
   public List<Categorias> getListAll(){
     return categoriasRepository.findAll();
   }
+
+
+  public Categorias salvar(Categorias categorias){
+    return categoriasRepository.save(categorias);
+  }
 }

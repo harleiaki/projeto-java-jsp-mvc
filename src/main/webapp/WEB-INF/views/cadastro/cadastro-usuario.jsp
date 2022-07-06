@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <title>Cadastro de Usuario</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-static-top"></nav>
 
 
-<form class="form-horizontal" method="post" action="/usuario" >
+<form class="form-horizontal" method="post" action="${pageContext.request.contextPath}/usuario" >
     <div class="panel panel-default">
         <div class="panel-heading">
             <h1 class="panel-title">Cadastro de usuario</h1>
@@ -32,7 +32,7 @@
     <div class="form-group">
         <label for="senha" class="col-sm-2 control-label">Senha</label>
         <div class="col-sm-2">
-            <input type="password" class="form-control" id="senha" name="senha"/ >
+            <input type="password" class="form-control" id="senha" name="senha" />
         </div>
     </div>
     <div class="form-group">
@@ -40,7 +40,7 @@
             <input type="submit" class="btn btn-danger">
         </div>
     </div>
-    	<script src="/js/bootstrap.min.js"></script>
+    	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </form>
 </body>
 </html>

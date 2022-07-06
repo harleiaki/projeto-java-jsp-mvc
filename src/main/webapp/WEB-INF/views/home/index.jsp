@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8" />
 <title>Home</title>
-<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
 </head>
 <body>
 
@@ -17,9 +17,13 @@
 		<div class="panel-heading">
 			<div class="clearfix">
 				<h1 class="panel-title impacta-titulo-panel">Home</h1>
-				<a class="btn btn-link impacta-link-panel" href="/usuario">Usuario</a><br/>
-				<a class="btn btn-link impacta-link-panel" href="/cadastrodespesa">Nova Despesa</a><br/>
-				<a class="btn btn-link impacta-link-panel" href="/listagem">Listagem de Despesas</a><br/>
+				<a class="btn btn-link impacta-link-panel" href="${pageContext.request.contextPath}/usuario">Usuario</a><br/>
+			</div>
+			<div class="clearfix">
+				<a class="btn btn-link impacta-link-panel" href="${pageContext.request.contextPath}/cadastrodespesa">Nova Despesa</a><br/>
+			</div>
+			<div class="clearfix">
+				<a class="btn btn-link impacta-link-panel" href="${pageContext.request.contextPath}/listagem">Listagem de Despesas</a><br/>
 			</div>
 		</div>
 
@@ -29,9 +33,9 @@
 		</div>
 
 	</div>
-	<script src="/js/jquery-3.1.1.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/despesa.js"></script>
+	<script src="${pageContext.request.contextPath}/js/jquery-3.1.1.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+	<script src="${pageContext.request.contextPath}/js/despesa.js"></script>
 
 </body>
 </html>
