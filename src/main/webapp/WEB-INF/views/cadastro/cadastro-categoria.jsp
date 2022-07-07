@@ -15,7 +15,7 @@
 <body>
 	<nav class="navbar navbar-inverse navbar-static-top"></nav>
 
-	<spring:form class="form-horizontal" method="POST" action="/categoria" modelAttribute="categoria">
+	<spring:form class="form-horizontal" method="POST" action="${pageContext.request.contextPath}/categoria" modelAttribute="categoria">
 
 		<c:if test="${!empty mensagem}">
 			<div class="alert alert-success">
