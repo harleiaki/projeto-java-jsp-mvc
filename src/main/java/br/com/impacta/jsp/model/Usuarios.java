@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
@@ -22,9 +19,14 @@ public class Usuarios {
     private long primarykey;
 
     @NotBlank(message = "Insira um nome")
+    @Column(nullable = false)
     private String nome;
+
     @Email(message = "Insira um email valido")
+    @Column(unique = true, nullable = false)
     private String email;
+
     @NotBlank(message = "Insira uma senha")
+    @Column(nullable = false)
     private String senha;
 }
